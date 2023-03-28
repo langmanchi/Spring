@@ -2,6 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置UserServiceImpl-->
+    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">
+        <!--name       ref:引用-->
+        <property name="userDao" ref="userDao"></property>
+    </bean>
 
-    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl"></bean>
+    <!--配置UserDaoImpl-->
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>
 </beans>

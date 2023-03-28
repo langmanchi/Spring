@@ -1,5 +1,6 @@
 package com.itheima.test;
 
+import com.itheima.dao.UserDao;
 import com.itheima.service.UserService;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
@@ -15,7 +16,11 @@ public class BeanFactoryTest {
         //根据id获取bean实例对象
         UserService userService = (UserService) beanFactory.getBean("userService");
 
-        System.out.println(userService);
+        //System.out.println(userService);
+
+        UserDao userDao = (UserDao) beanFactory.getBean("userDao");
+
+        //System.out.println(userDao);
 
     }
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl" autowire="byName"></bean>
+
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl" ></bean>
+
+    <bean id="userDao2" class="com.itheima.dao.impl.UserDaoImpl" ></bean>
+
+    <alias name="userDao" alias="xxx"></alias>
+    <alias name="userDao" alias="yyy"></alias>
+
+    <beans profile="dev">
+        <bean id="userService1" class="com.itheima.service.impl.UserServiceImpl"></bean>
+    </beans>
+
+    <beans profile="test">
+        <bean id="userDao1" class="com.itheima.dao.impl.UserDaoImpl"></bean>
+    </beans>
+
+
+    <!--    <property name="stringList">-->
+<!--        <list>-->
+<!--            <value>aaa</value>-->
+<!--            <value>bbb</value>-->
+<!--            <value>ccc</value>-->
+<!--        </list>-->
+<!--    </property>-->
+
+<!--    <property name="userDaoList">-->
+<!--        <list>-->
+<!--            <bean class="com.itheima.dao.impl.UserDaoImpl"></bean>-->
+<!--            <bean class="com.itheima.dao.impl.UserDaoImpl"></bean>-->
+<!--            <bean class="com.itheima.dao.impl.UserDaoImpl"></bean>-->
+<!--        </list>-->
+<!--    </property>-->
+
+
+
+
+
+
+
+
+
+<!--    <bean id="userDao3" class="com.itheima.factory.MyBeanFactory3"></bean>-->
+
+
+
+
+
+<!--    <bean id="myBeanFactory2" class="com.itheima.factory.MyBeanFactory2"></bean>-->
+
+<!--    <bean id="userDao2" factory-bean="myBeanFactory2" factory-method="userDao"></bean>-->
+<!--    &lt;!&ndash;将方法的返回值作为对象，不是&ndash;&gt;-->
+<!--    <bean id="userDao1" class="com.itheima.factory.MyBeanFactory1" factory-method="userDao"></bean>-->
+
+
+<!--    &lt;!&ndash;配置UserServiceImpl&ndash;&gt;-->
+<!--    <bean id="userService"  class="com.itheima.service.impl.UserServiceImpl" >-->
+<!--        <constructor-arg name="name" value="haohao"></constructor-arg>-->
+<!--        &lt;!&ndash;name       ref:引用&ndash;&gt;-->
+<!--        <property name="userDao"  ref="userDao"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;配置UserDaoImpl&ndash;&gt;-->
+<!--    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>-->
+
+</beans>
